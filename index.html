@@ -92,7 +92,7 @@
         }
         
         .hero-content {
-            max-width: 1300px;
+            max-width: 1400px;
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -114,7 +114,7 @@
         }
         
         .logo {
-            width: 140px;
+            width: auto;
             height: 140px;
             filter: brightness(0) invert(1);
         }
@@ -188,7 +188,7 @@
         
         .phone-showcase {
             position: relative;
-            width: 380px;
+            width: 500px;
             animation: float 6s ease-in-out infinite;
         }
         
@@ -204,9 +204,9 @@
             box-shadow: 0 25px 80px rgba(0,0,0,0.3);
         }
         
-        /* ===== FEATURES SECTION ===== */
-        .features {
-            padding: 6rem 2rem;
+        /* ===== SCREENSHOTS SECTION (Now first, under heading) ===== */
+        .screenshots-section {
+            padding: 6rem 2rem 3rem;
             background: var(--cream);
         }
         
@@ -217,7 +217,7 @@
         
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         
         .section-title {
@@ -233,6 +233,51 @@
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
+        }
+        
+        .screenshots-scroll {
+            display: flex;
+            gap: 3rem;
+            overflow-x: auto;
+            padding: 2rem 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        
+        .screenshots-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .screenshot-item {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .screenshot-item img {
+            width: 450px;
+            height: auto;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .screenshot-label {
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+        }
+        
+        /* ===== FEATURES SECTION (Now below screenshots) ===== */
+        .features {
+            padding: 4rem 2rem 6rem;
+            background: var(--cream);
         }
         
         .features-grid {
@@ -280,51 +325,6 @@
             color: var(--text-muted);
             line-height: 1.6;
             font-size: 0.95rem;
-        }
-        
-        /* ===== SCREENSHOTS SECTION ===== */
-        .screenshots {
-            padding: 6rem 2rem;
-            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
-        }
-        
-        .screenshots-scroll {
-            display: flex;
-            gap: 2.5rem;
-            overflow-x: auto;
-            padding: 2rem 0;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        
-        .screenshots-scroll::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .screenshot-item {
-            flex: 0 0 auto;
-            scroll-snap-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .screenshot-item:hover {
-            transform: scale(1.03);
-        }
-        
-        .screenshot-item img {
-            width: 340px;
-            height: auto;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-strong);
-        }
-        
-        .screenshot-label {
-            text-align: center;
-            margin-top: 1rem;
-            font-weight: 600;
-            color: var(--forest-green);
-            font-size: 1rem;
         }
         
         /* ===== ABOUT SECTION ===== */
@@ -502,7 +502,7 @@
             }
             
             .phone-showcase {
-                width: 300px;
+                width: 350px;
             }
             
             .about-content {
@@ -515,12 +515,15 @@
             }
             
             .logo {
-                width: 100px;
                 height: 100px;
             }
             
             .app-name {
                 font-size: 2.5rem;
+            }
+            
+            .screenshot-item img {
+                width: 350px;
             }
         }
         
@@ -531,7 +534,6 @@
             }
             
             .logo {
-                width: 80px;
                 height: 80px;
             }
             
@@ -539,12 +541,16 @@
                 font-size: 2rem;
             }
             
-            .features, .screenshots, .about {
+            .phone-showcase {
+                width: 280px;
+            }
+            
+            .screenshots-section, .features, .about {
                 padding: 4rem 1.5rem;
             }
             
             .screenshot-item img {
-                width: 280px;
+                width: 300px;
             }
             
             .about-image img {
@@ -596,14 +602,60 @@
         </div>
     </section>
     
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Screenshots Section (Now first, right after hero) -->
+    <section class="screenshots-section" id="screenshots">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Garden to Table, Made Simple</h2>
                 <p class="section-subtitle">Everything you need to grow your own food and turn your harvest into delicious meals.</p>
             </div>
-            
+        </div>
+        
+        <div class="screenshots-scroll">
+            <div style="min-width: 2rem;"></div>
+            <div class="screenshot-item">
+                <img src="images/Grow.png" alt="Grow Calendar showing what to sow each month">
+                <p class="screenshot-label">Grow Calendar</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/Recipe_4.png" alt="Cook section with recipe collections">
+                <p class="screenshot-label">Recipe Discovery</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/Recipe_2.png" alt="Carrot recipes matched to your harvest">
+                <p class="screenshot-label">Harvest Recipes</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/Recipe_1.png" alt="In season now">
+                <p class="screenshot-label">In Season Now</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/Recipe_3.png" alt="Recipe detail view">
+                <p class="screenshot-label">Recipe Details</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/Timeline1.png" alt="Garden timeline showing seasonal progress">
+                <p class="screenshot-label">Garden Timeline</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/Timeline2.png" alt="Add seasonal photo">
+                <p class="screenshot-label">Capture Moments</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/Freezer.png" alt="Freezer tracker">
+                <p class="screenshot-label">Freezer Tracker</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/More1.png" alt="More features">
+                <p class="screenshot-label">And More...</p>
+            </div>
+            <div style="min-width: 2rem;"></div>
+        </div>
+    </section>
+    
+    <!-- Features Section (Now below screenshots) -->
+    <section class="features" id="features">
+        <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🌱</div>
@@ -725,57 +777,6 @@
                     <p class="feature-text">Keep track of seeds, tools, and supplies you need for your garden.</p>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Screenshots Section -->
-    <section class="screenshots" id="screenshots">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">See It In Action</h2>
-                <p class="section-subtitle">A beautifully designed app that makes gardening and cooking a joy.</p>
-            </div>
-        </div>
-        
-        <div class="screenshots-scroll">
-            <div style="min-width: 2rem;"></div>
-            <div class="screenshot-item">
-                <img src="images/Grow.png" alt="Grow Calendar showing what to sow each month">
-                <p class="screenshot-label">Grow Calendar</p>
-            </div>
-            <div class="screenshot-item">
-                <img src="images/Recipe_4.png" alt="Cook section with recipe collections">
-                <p class="screenshot-label">Recipe Discovery</p>
-            </div>
-            <div class="screenshot-item">
-                <img src="images/Recipe_2.png" alt="Carrot recipes matched to your harvest">
-                <p class="screenshot-label">Harvest Recipes</p>
-            </div>
-            <div class="screenshot-item">
-                <img src="images/Recipe_1.png" alt="In season now">
-                <p class="screenshot-label">In Season Now</p>
-            </div>
-            <div class="screenshot-item">
-                <img src="images/Recipe_3.png" alt="Recipe detail view">
-                <p class="screenshot-label">Recipe Details</p>
-            </div>
-            <div class="screenshot-item">
-                <img src="images/Timeline1.png" alt="Garden timeline showing seasonal progress">
-                <p class="screenshot-label">Garden Timeline</p>
-            </div>
-            <div class="screenshot-item">
-                <img src="images/Timeline2.png" alt="Add seasonal photo">
-                <p class="screenshot-label">Capture Moments</p>
-            </div>
-            <div class="screenshot-item">
-                <img src="images/Freezer.png" alt="Freezer tracker">
-                <p class="screenshot-label">Freezer Tracker</p>
-            </div>
-            <div class="screenshot-item">
-                <img src="images/More1.png" alt="More features">
-                <p class="screenshot-label">And More...</p>
-            </div>
-            <div style="min-width: 2rem;"></div>
         </div>
     </section>
     
